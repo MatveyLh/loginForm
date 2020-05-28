@@ -36,3 +36,65 @@
     transform: rotate(360deg);
   }
 }
+.sidenav---sidenav-toggle---1KRjR {
+    display: none
+}
+.content {
+    display: flex;
+}
+div[role=presentation] {
+    padding:10px;
+    cursor: pointer;
+}
+main{
+    width: 80%;
+    margin: 82px;
+}
+.btn-exit {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    padding-bottom: 30px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card__title {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.dashboard__health-chart {
+    position: relative;
+}
+.recharts-responsive-container {
+    width: 100%;
+    height: 180px;
+}
+.dashboard__health-chart-info {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 55px);
+    -webkit-animation: label 1.5s ease-in;
+    animation: label 1.5s ease-in;
+}
+.diagrams {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.dashboard__health-chart-number {
+    font-size: 56px;
+    line-height: 60px;
+    margin: 0;
+}

@@ -1,26 +1,40 @@
-import React from 'react';
+import React,  {useState, useEffect, useRef}  from 'react';
+import Login from "./components/Login";
+import Content from "./components/Content";
+import { Redirect } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [],
+            isLoaded:false,
+            redirect: '/default_theme',
+        }
+    }
+
+    render() {
+        return(
+            <React.Fragment>
+                <Router basename={process.env.PUBLIC_URL}>
+                    <Route  path='/login' component={Login}/>
+                    <Route  path='/default_theme' component={Content}/>
+                    <Route exact path='/'>
+                    </Route>
+                    <Redirect to={this.state.redirect}/>
+                </Router>
+            </React.Fragment>
+        )
+    }
 }
 
 export default App;
